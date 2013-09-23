@@ -28,6 +28,16 @@
     <!--[if lt IE 9]>
     <script src="lib/js/html5shiv.js"></script>
     <![endif]-->
+
+    <style>
+      q:before {
+        content: '"';
+      }
+      q:after {
+        content: '"';
+      }
+    </style>
+
   </head>
 
   <body>
@@ -57,12 +67,15 @@
             </ul>
           </section>
           <section>
-            <img src="assets/improve-all-things.jpg" alt="Improve All The Things!" />
-            IMG: Improve all the things!
-            IMG: Change all the things!
+            <div>
+              <img src="assets/improve-all-things.jpg" alt="Improve All The Things!" />
+            </div>
+            <div class="fragment">
+              <img src="assets/change-all-things.jpg" alt="Change All The Things!" />
+            </div>
           </section>
           <section>
-            <q>We have to allow ourselves to break APIs in order to innovate.</q>
+            <blockquote>We have to allow ourselves to break APIs in order to innovate.</blockquote>
           </section>
           <section>
             <h2>Drupal core dev cycle</h2>
@@ -74,11 +87,58 @@
             </ul>
             <p style="margin-top: 1em;" class="fragment">GOTO 1</p>
           </section>
+        </section>
+        <section>
           <section>
-            <h2>Cycles</h2>
+            <h2>Drupal core dev cycle</h2>
+            <h3 class="fragment roll-in">The reality</h3>
+          </section>
+          <section>
+            <h2>Drupal core dev cycle</h2>
             <ul>
-
+              <li class="fragment">Release Drupal X</li>
+              <li class="fragment">Catch up on sleep</li>
+              <li class="fragment">Ignore Drupal X</li>
+              <li class="fragment">Do stuff we forgot about</li>
+              <li class="fragment">Design new stuff <span class="fragment">(Have we even used the old stuff yet?)</span></li>
+              <li class="fragment">Panic because we have no clue how long we have</li>
             </ul>
+          </section>
+          <section>
+            <div>
+              <img src="assets/improve-all-things.jpg" alt="Improve All The Things!" />
+            </div>
+            <div class="fragment">
+              <img src="assets/change-all-things.jpg" alt="Change All The Things!" />
+            </div>
+          </section>
+          <section>
+            <h2>Drupal core dev cycle</h2>
+            <h3>Eventually...</h3>
+            <ul>
+              <li class="fragment">Dries announces feature freeze</li>
+              <li class="fragment">Panic some more</li>
+              <li class="fragment"><del>Freeze</del> <del class="fragment">Slush</del> <span class="fragment">Smoothy</span></li>
+              <li class="fragment">Many wander off... <span class="fragment">Only the stubborn remain</span></li>
+              <li class="fragment">Stumble into Y.0 in comotose stupor</li>
+              <li class="fragment">Release!</li>
+            </ul>
+          </section>
+          <section>
+            <h2>Why Panic?</h2>
+            <blockquote>I think I am burned out, I am literally losing sleep over this,
+            but I am too stubborn to care about my own feelings because I know I will have
+            to live with this for the next three years.</blockquote>
+            <p>&mdash; Kris Vanderwater (EclipseGc)</p>
+          </section>
+          <section>
+            <h2>Corporate interest</h2>
+            <p class="fragment"><q>We love long release cycles! Yay stability!</q></p>
+            <p class="fragment"><q>We won't contriubte to long release cycles. ROI takes too long.</q></p>
+          </section>
+          <section>
+            <p>Sometimes API breaks are necessary in order to evolve.</p>
+            <p class="fragment">If you cannot innovate without breaking APIs,<br />you don't have an API.</p>
           </section>
         </section>
         <section>
