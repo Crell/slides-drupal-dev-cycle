@@ -179,10 +179,28 @@
             <h2>How's that work?</h2>
           </section>
           <section>
-            [Example of changing API without changing API]
+            <h2>Future-looking interfaces</h2>
+            <pre><code class="php">interface OldStyleInterface {
+  public function foo();
+}
+interface NewStyleInterface extends OldStyleInterface {
+  public function bar();
+}
+
+function cool_stuff(OldStyleInterface $service) {
+  if ($service instanceof NewStyleInterface) {
+    $bar = $service->bar();
+  }
+  else {
+    $bar = "Some previously assumed value.";
+  }
+  // ...
+}
+</code></pre>
           </section>
           <section>
-            [Example of BC via interfaces]
+            <h2>Service-swapping</h2>
+            <p>That's the whole point of interfaces and Dependency Injection</p>
           </section>
           <section>
             <h2>Just add stuff</h2>
@@ -195,6 +213,7 @@
               <li class="fragment">Improve taxonomy admin pager (and other admin UIs)</li>
               <li class="fragment">Continue to refine Seven style guide</li>
               <li class="fragment">Cache improvements</li>
+              <li class="fragment">"_page" unified controllers</li>
               <li class="fragment">All kinds of stuff!</li>
             </ul>
           </section>
@@ -211,6 +230,7 @@
             <li class="fragment">No, we backported minor things</li>
             <li class="fragment">Did anyone notice?</li>
             <li class="fragment">Attention was always on Drupal 8</li>
+            <li class="fragment">... and D8 still didn't diverge drastically for a year</li>
           </ul>
         </section>
         <section>
@@ -268,7 +288,7 @@
             <h3>What we get</h3>
             <ul>
               <li class="fragment"><em>faster</em> improvements</li>
-              <li class="fragment">Lower stress (Next feature release is only a few months away.)</li>
+              <li class="fragment">Lower stress (New features are only a few months away.)</li>
               <li class="fragment">Easier corporate investment</li>
               <li class="fragment">Easier small-shop investment</li>
               <li class="fragment">Important learning experience</li>
