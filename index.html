@@ -134,84 +134,131 @@
           <section>
             <h2>Corporate interest</h2>
             <p class="fragment"><q>We love long release cycles! Yay stability!</q></p>
-            <p class="fragment"><q>We won't contriubte to long release cycles. ROI takes too long.</q></p>
+            <p class="fragment"><q>We won't contribute to long release cycles. ROI takes too long.</q></p>
           </section>
           <section>
             <p>Sometimes API breaks are necessary in order to evolve.</p>
             <p class="fragment">If you cannot innovate without breaking APIs,<br />you don't have an API.</p>
+            <p class="fragment">Drupal 8 was necessary... but should be rare.</p>
+          </section>
+        </section>
+        <section>
+          <section>
+            <h2>What Drupal needs</h2>
+            <ul>
+              <li class="fragment">More stability <span class="fragment">(but not less development)</span></li>
+              <li class="fragment">Rapid iterative development</li>
+              <li class="fragment">Shorter ROI</li>
+            </ul>
+          </section>
+          <section>
+            <img src="assets/dont-break-all-things.jpg" alt="Don't Break All The Things!" />
+          </section>
+          <section>
+            <h2>How do we get that?</h2>
+            <ul>
+              <li class="fragment">Loosely-coupled components</li>
+              <li class="fragment">Separation of concerns</li>
+              <li class="fragment">Clear API boundaries</li>
+              <li class="fragment">Swappable components by design</li>
+            </ul>
+            <p style="margin-top: 1em; font-weight: bold;" class="fragment">Clear interfaces and real APIs</p>
+          </section>
+          <section>
+            <p>All of those changes we've been making for the last 2 years</p>
+            <ul>
+              <li class="fragment">Dependency injection</li>
+              <li class="fragment">Interface-driven development</li>
+              <li class="fragment">\Drupal\Component</li>
+            </ul>
+            <p class="fragment" style="margin-top: 1em;"><em>Drupal 8 makes this possible</em></p>
+          </section>
+        </section>
+        <section>
+          <section>
+            <h2>How's that work?</h2>
+          </section>
+          <section>
+            [Example of changing API without changing API]
+          </section>
+          <section>
+            [Example of BC via interfaces]
+          </section>
+          <section>
+            [List of things we can add like REST UI, link manipulation, etc.]
+          </section>
+          <section>
+            <blockquote>An API is a function that performs an operation on a series of arrays.</blockquote>
+            <p>&mdash; Druplicon</p>
+            <p class="fragment" style="margin-top: 1em; color: red;"><strong>WRONG!</strong></p>
+            <p class="fragment" style="margin-top: 1em;">(This is why we can't have nice things.)</p>
+          </section>
+        </section>
+        <section>
+          <q>But wait, didn't we do that for Drupal 7?</q>
+          <ul>
+            <li class="fragment">No, we backported minor things</li>
+            <li class="fragment">Did anyone notice?</li>
+            <li class="fragment">Attention was always on Drupal 8</li>
+          </ul>
+        </section>
+        <section>
+          <section>
+            <h2>The proposal</h2>
+            <ul>
+              <li class="fragment">Do not open Drupal 9 dev for <em>at least</em> a year</li>
+              <li class="fragment">Add significant non-breaking features to Drupal 8</li>
+              <li class="fragment">Force ourselves to think about BC</li>
+              <li class="fragment">Track desired BC-breaks</li>
+              <li class="fragment">Drupal 9.0: <em>Just</em> the BC changes</li>
+            </ul>
+          </section>
+          <section>
+            <p>This will be a hard learning experience</p>
+            <p class="fragment" style="margin-top: 1em;">But it's how we have our (cup)cake and eat it to</p>
+          </section>
+          <section>
+            <h2>Possible schedule</h2>
+            <ul>
+              <li class="fragment">January: 8.0</li>
+              <li class="fragment">February: 8.0.1 (bugfix)</li>
+              <li class="fragment">March: 8.0.2 (bugfix)</li>
+              <li class="fragment">April: 8.1.0 (features)</li>
+              <li class="fragment">May: 8.1.1 (bugfix)</li>
+              <li class="fragment">June: 8.2.1 (bugfix)</li>
+              <li class="fragment">July: 8.2.0 (features)</li>
+              <li class="fragment">etc.</li>
+            </ul>
+          </section>
+        </section>
+        <section>
+          <section>
+            <h3>Potential problems</h3>
+            <ul>
+              <li class="fragment"><div>But how can we innovate?</div><div class="fragment" style="text-align: right; font-style: italic;">The same way as everyone else</div></li>
+              <li class="fragment"><div>But we don't even know if our new APIs will stand up to it!</div><div class="fragment" style="text-align: right; font-style: italic;"> Let's find out!</div></li>
+              <li class="fragment"><div>But that pushes D9 even further away!</div><div class="fragment" style="text-align: right; font-style: italic;">Or shorter dev. Won't feel it if we get new toys.</div></li>
+              <li class="fragment"><div>But our packaging scripts aren't up to the task.</div><div class="fragment" style="text-align: right; font-style: italic;">DA, this is your job.</div></li>
+              <li class="fragment"><div>But what about translations?</div><div class="fragment" style="text-align: right; font-style: italic;">localize.drupal.org; string changes OK with warning.</div></li>
+              <li class="fragment"><div>But I like my playground!</div><div class="fragment" style="text-align: right; font-style: italic;">$100 million ride on this. Take it seriously.</div></li>
+            </ul>
+          </section>
+          <section>
+            <h3>Security releases</h3>
+            <ul>
+              <li class="fragment"></li>
+              <li class="fragment"></li>
+              <li class="fragment"></li>
+              <li class="fragment"></li>
+            </ul>
+            <p class="fragment" style="margin-top: 1em;">This is the only hard problem. It's resolvable.</p>
           </section>
         </section>
         <section>
           <aside class="notes">
 
-Boom/bust dev cycle
-- Improve all the things!
-- Change all the things!
-- The sky's the limit, the world is your oyster!
-
-Quote from Greg from Kris about 3 years to fix a mistake.
-
-Burnout: After a 3 year dev cycle, we're all dead.
-
-Corp investment: Want results in less than 3 years.
-
-Drupal 7 -> Drupal 8: Necessary but frickin' huge.
-
-Break all the things!
 
 
-What we need going forward:
-- Shorter ROI
-- Less epic development
-- Iterative improvement
-
-What makes that possible?
-- Loosely-coupled components
-- Separation of concerns
-- Clear API boundaries
-==> Interfaces and real APIs
-
-aka, all of those things we've been building for the last 2 years.
-
-Howzat?
-[Example of changing API without changing API]
-
-[Example of BC via interfaces]
-
-[List of things we can add like REST UI, link manipulation, etc.]
-
-"An API is a function that performs an operation on a series of arrays." - WRONG!
-
-But didn't we do that for Drupal 7?
-- No, we backported minor things.
-- Did anyone notice?
-- Attention was always on Drupal 8.
-
-Cornerstone:
-- Do not open Drupal 9 dev for *at least* a year.
-- Force ourselves to think about BC.
-- Collect list of things that require BC breaks, save them for later.
-- When D9 opens, JUST do the BC changes.  Save stuff for 9.1.
-- This will be hard; a learning experience for core devs.
-- Are you up for the challenge of having your (cup)cake and eating it too?
-
-Schedule:
-- January: 8.0
-- February: 8.0.1 (bugfix)
-- March: 8.0.2 (bugfix)
-- April: 8.1.0 (features)
-- May: 8.1.1 (bugfix)
-- June: 8.2.1 (bugfix)
-- July: 8.2.0 (features)
-- etc.
-
-Problems:
-- But how can we innovate? (Only Drupal is dumb enough to think you can't innovate without breaking APIs.)
-- But we don't even know if our new APIs will stand up to it! (Let's find out!)
-- But that pushes D9 even further away! (Maybe? Or maybe it just becomes much shorter. Won't feel it if we get new toys without breaking BC.)
-- Our packaging scripts aren't up to the task. (DA, this is your job.)
-- Translations? (Now update well enough that is a solved problem; string changes OK.)
-- But I like my playground! (Welcome to growing up. $10s million ride on this. Take it seriously.)
 - What about security releases? (Ah, not sure yet.)
 
 => Decide what we want to do about security releases, the rest is easy.
@@ -230,13 +277,15 @@ To prepare:
 - Decide what constitutes an API break.  (@api, @deprecated)
 - Ensure good interfaces and swappability. (Already in progress, ~ to testability.)
 
-Dries talks about Drupal growing up...
-
-Welcome to adulthood.
-
-Discuss.
-
           </aside>
+        </section>
+        <section>
+          <p>Dries talks about Drupal growing up</p>
+          <p class="fragment">Welcome to adulthood</p>
+          <p class="fragment roll-in">(Please have exact change)</p>
+        </section>
+        <section>
+          <h1>Discuss</h1>
         </section>
       </div>
 
