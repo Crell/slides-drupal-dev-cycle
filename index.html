@@ -177,6 +177,24 @@
             <h2>How's that work?</h2>
           </section>
           <section>
+            <h2>Rename classes/interfaces</h2>
+            <pre><code class="php">class BookManager {
+  public function getAllBooks() {}
+}
+class BookRepository extends BookManager {
+  public function doSomethingNew() {}
+}
+
+function core_cool_stuff(BookRepository $repository) {
+  $books = $repository->getAllBooks();
+  $repository->doSomethingNew();
+}
+function contrib_cool_stuff(BookManager $manager) {
+  $books = $manager->getAllBooks();
+}
+</code></pre>
+          </section>
+          <section>
             <h2>Future-looking interfaces</h2>
             <pre><code class="php">interface OldStyleInterface {
   public function foo();
@@ -212,12 +230,16 @@ function cool_stuff(OldStyleInterface $service) {
               <li class="fragment">Continue to refine Seven style guide</li>
               <li class="fragment">Cache improvements</li>
               <li class="fragment">"_page" unified controllers</li>
+              <li class="fragment"><a href="https://drupal.org/node/1972304">HookEvent</a> bridge</li>
               <li class="fragment">All kinds of stuff!</li>
             </ul>
           </section>
           <section>
-            <blockquote>An API is a function that performs an operation on a series of arrays.</blockquote>
-            <p>&mdash; Druplicon</p>
+            <h3>Druplicon: API?</h3>
+            <div class="fragment">
+              <blockquote>An API is a function that performs an operation on a series of arrays.</blockquote>
+              <p>&mdash; Druplicon</p>
+            </div>
             <p class="fragment" style="margin-top: 1em; color: red;"><strong>WRONG!</strong></p>
             <p class="fragment" style="margin-top: 1em;">(This is why we can't have nice things.)</p>
           </section>
